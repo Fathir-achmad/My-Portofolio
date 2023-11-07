@@ -20,7 +20,6 @@ const router = createBrowserRouter([
       { path: "/projects", element: <ProjectsPageView /> },
     ]
   },
-  // { path: "/register", element: <RegisterPage/> }
 ])
 
 function App() {
