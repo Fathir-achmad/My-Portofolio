@@ -16,11 +16,6 @@ import {
 } from "react-icons/si";
 import { GrReactjs } from "react-icons/gr";
 import { FaGithub, FaNodeJs } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-import {
-  PiArrowFatLineLeftFill,
-  PiArrowFatLineRightFill,
-} from "react-icons/pi";
 
 const Feature = (props) => {
   return (
@@ -71,10 +66,6 @@ const Feature = (props) => {
 };
 
 export const SkillsPage = () => {
-  const navigate = useNavigate();
-  const handleClick = (path) => {
-    navigate(path);
-  };
   return (
     <Box bg="#edf3f8" p="19px 30px">
       <Flex
@@ -87,15 +78,6 @@ export const SkillsPage = () => {
         flexDir={{ base: "column", lg: "row" }}
         gap={{ base: "3", lg: "8" }}
       >
-        <Flex
-          cursor={"pointer"}
-          onClick={() => handleClick("/education")}
-          align="center"
-          justify={{ base: "center", lg: "flex-end" }}
-          mb={{ base: 4, lg: 0 }}
-        >
-          <PiArrowFatLineLeftFill fontSize={35} />
-        </Flex>
         <Box
           py={12}
           bg="white"
@@ -162,15 +144,6 @@ export const SkillsPage = () => {
             </Box>
           </Box>
         </Box>
-        <Flex
-          cursor={"pointer"}
-          onClick={() => handleClick("/work")}
-          align="center"
-          justify={{ base: "center", lg: "flex-end" }}
-          mt={{ base: 4, lg: 3 }}
-        >
-          <PiArrowFatLineRightFill fontSize={35} />
-        </Flex>
       </Flex>
     </Box>
   );

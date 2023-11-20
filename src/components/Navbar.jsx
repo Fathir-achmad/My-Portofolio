@@ -8,7 +8,6 @@ export const Navbar = () => {
   const [isMediumScreen] = useMediaQuery("(max-width: 768px)");
   const { pathname } = useLocation();
 
-  // Menghapus host dan protokol dari URL saat ini
   const currentPath = pathname.replace(window.location.origin, "");
 
   const handleClick = (path) => {
@@ -34,9 +33,19 @@ export const Navbar = () => {
         >
           <Text fontSize="2xl" fontWeight="bold">
             <Link
+              onClick={() => handleClick("/")}
+              style={{
+                color: currentPath === "/" ? "gray" : "white"
+              }}
+            >
+              Home
+            </Link>
+          </Text>
+          <Text fontSize="2xl" fontWeight="bold">
+            <Link
               onClick={() => handleClick("/about")}
               style={{
-                color: currentPath === "/about" ? "blue" : "white"
+                color: currentPath === "/about" ? "gray" : "white"
               }}
             >
               About
@@ -46,7 +55,7 @@ export const Navbar = () => {
             <Link
               onClick={() => handleClick("/education")}
               style={{
-                color: currentPath === "/education" ? "blue" : "white"
+                color: currentPath === "/education" ? "gray" : "white"
               }}
             >
               Education
@@ -56,7 +65,7 @@ export const Navbar = () => {
             <Link
               onClick={() => handleClick("/skills")}
               style={{
-                color: currentPath === "/skills" ? "blue" : "white"
+                color: currentPath === "/skills" ? "gray" : "white"
               }}
             >
               Skills
@@ -66,7 +75,7 @@ export const Navbar = () => {
             <Link
               onClick={() => handleClick("/work")}
               style={{
-                color: currentPath === "/work" ? "blue" : "white"
+                color: currentPath === "/work" ? "gray" : "white"
               }}
             >
               Work
@@ -76,7 +85,7 @@ export const Navbar = () => {
             <Link
               onClick={() => handleClick("/projects")}
               style={{
-                color: currentPath === "/projects" ? "blue" : "white"
+                color: currentPath === "/projects" ? "gray" : "white"
               }}
             >
               Projects

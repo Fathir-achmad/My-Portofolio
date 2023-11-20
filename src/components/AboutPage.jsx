@@ -1,16 +1,7 @@
 import { Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import {
-  PiArrowFatLineLeftFill,
-  PiArrowFatLineRightFill,
-} from "react-icons/pi";
-import { useNavigate } from "react-router-dom";
 
 export const AboutPage = () => {
-  const navigate = useNavigate();
-  const handleClick = (path) => {
-    navigate(path);
-  };
-
+  
   return (
     <>
       <Flex
@@ -20,13 +11,6 @@ export const AboutPage = () => {
         gap={20}
         direction={{ base: "column", lg: "row" }}
       >
-        <Flex
-          justifyContent={"flex-end"}
-          cursor={"pointer"}
-          onClick={() => handleClick("/")}
-        >
-          <PiArrowFatLineLeftFill fontSize={35} />
-        </Flex>
         <Flex
           direction="column"
           maxW={{ base: "full", lg: "25%" }}
@@ -66,13 +50,6 @@ export const AboutPage = () => {
             borderRadius={"20px"}
             h="100%"
           />
-        </Flex>
-        <Flex
-          justifyContent={"flex-end"}
-          cursor={"pointer"}
-          onClick={() => handleClick("/education")}
-        >
-          <PiArrowFatLineRightFill fontSize={35} />
         </Flex>
       </Flex>
     </>

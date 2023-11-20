@@ -10,18 +10,9 @@ import {
   useColorModeValue,
   Box,
 } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
-import {
-  PiArrowFatLineLeftFill,
-  PiArrowFatLineRightFill,
-} from "react-icons/pi";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 export const WorkPage = () => {
-  const navigate = useNavigate();
-  const handleClick = (path) => {
-    navigate(path);
-  };
 
   return (
     <Box p={4} bg="#edf3f8">
@@ -30,15 +21,6 @@ export const WorkPage = () => {
         flexDir={{ base: "column", lg: "row" }}
         gap={5}
       >
-        <Flex
-          cursor={"pointer"}
-          onClick={() => handleClick("/skills")}
-          align="center"
-          justify={{ base: "center", lg: "flex-end" }}
-          mb={{ base: 4, lg: 0 }}
-        >
-          <PiArrowFatLineLeftFill fontSize={35} />
-        </Flex>
         <Flex>
           <Container
             maxW={"5xl"}
@@ -146,15 +128,6 @@ export const WorkPage = () => {
               </Stack>
             </SimpleGrid>
           </Container>
-        </Flex>
-        <Flex
-          cursor={"pointer"}
-          onClick={() => handleClick("/projects")}
-          align="center"
-          justify={{ base: "center", lg: "flex-start" }}
-          mb={{ base: 4, lg: 0 }}
-        >
-          <PiArrowFatLineRightFill fontSize={35} />
         </Flex>
       </Flex>
     </Box>

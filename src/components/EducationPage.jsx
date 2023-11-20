@@ -17,12 +17,6 @@ import {
   FcGraduationCap,
   FcOrganization,
 } from "react-icons/fc";
-import { useNavigate } from "react-router-dom";
-import {
-  PiArrowFatLineLeftFill,
-  PiArrowFatLineRightFill,
-} from "react-icons/pi";
-
 function Card({ heading, description, icon, href }) {
   return (
     <Box
@@ -69,10 +63,6 @@ function Card({ heading, description, icon, href }) {
 }
 
 export const EducationPage = () => {
-  const navigate = useNavigate();
-  const handleClick = (path) => {
-    navigate(path);
-  };
   return (
     <Box bg="#edf3f8">
       <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
@@ -83,15 +73,6 @@ export const EducationPage = () => {
         flexDir={{ base: "column", lg: "row" }}
         gap={5}
       >
-        <Flex
-          cursor={"pointer"}
-          onClick={() => handleClick("/about")}
-          align="center"
-          justify={{ base: "center", lg: "flex-end" }}
-          mb={{ base: 4, lg: 0 }}
-        >
-          <PiArrowFatLineLeftFill fontSize={35} />
-        </Flex>
         <Flex
           flexWrap="wrap"
           gridGap={6}
@@ -130,15 +111,6 @@ export const EducationPage = () => {
             description={"Fullstack javascript developer."}
             href={"https://purwadhika.com/"}
           />
-        </Flex>
-        <Flex
-          cursor={"pointer"}
-          onClick={() => handleClick("/skills")}
-          align="center"
-          justify={{ base: "center", lg: "flex-start" }}
-          mt={{ base: 4, lg: 0 }}
-        >
-          <PiArrowFatLineRightFill fontSize={35} />
         </Flex>
       </Flex>
     </Box>

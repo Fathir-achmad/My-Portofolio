@@ -1,18 +1,18 @@
 import {
   Box,
-  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
+  IconButton,
   Link,
   Stack,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 
@@ -20,23 +20,26 @@ export const DrawerNavbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
   const navigate = useNavigate();
+  const [activePage, setActivePage] = useState("/");
 
   const handleClick = (path) => {
     navigate(path);
+    setActivePage(path); // Mengatur halaman yang aktif saat ini
+  };
+
+  const isActive = (path) => {
+    return path === activePage ? "black" : "gray"; // Mengatur warna berdasarkan halaman yang aktif
   };
 
   return (
     <Box bgColor={"black"}>
-      <Button
+      <IconButton
+        aria-label="Menu"
+        icon={<HiMenuAlt1 fontSize={30} color="white" />}
         onClick={onOpen}
-        ref={btnRef}
-        cursor={"pointer"}
-        display={{ base: "block", md: "none" }}
         bgColor={"transparent"}
-        size="lg" 
-      >
-        <HiMenuAlt1 fontSize={30} color="white"/>
-      </Button>
+        size="lg"
+      />
       <Drawer
         isOpen={isOpen}
         placement="left"
@@ -49,22 +52,37 @@ export const DrawerNavbar = () => {
             colorScheme="red"
             _hover={{ backgroundColor: "red", color: "white" }}
           />
-          <DrawerHeader>{" "}</DrawerHeader>
+          <DrawerHeader> </DrawerHeader>
           <DrawerBody>
             <Stack spacing={20} px={"10px"}>
-              <Text fontSize="2xl" fontWeight="bold">
+              <Text fontSize="2xl" fontWeight="bold" color={isActive("/")}>
+                <Link onClick={() => handleClick("/")}>Home</Link>
+              </Text>
+              <Text fontSize="2xl" fontWeight="bold" color={isActive("/about")}>
                 <Link onClick={() => handleClick("/about")}>About</Link>
               </Text>
-              <Text fontSize="2xl" fontWeight="bold">
+              <Text
+                fontSize="2xl"
+                fontWeight="bold"
+                color={isActive("/education")}
+              >
                 <Link onClick={() => handleClick("/education")}>Education</Link>
               </Text>
-              <Text fontSize="2xl" fontWeight="bold">
+              <Text
+                fontSize="2xl"
+                fontWeight="bold"
+                color={isActive("/skills")}
+              >
                 <Link onClick={() => handleClick("/skills")}>Skills</Link>
               </Text>
-              <Text fontSize="2xl" fontWeight="bold">
+              <Text fontSize="2xl" fontWeight="bold" color={isActive("/work")}>
                 <Link onClick={() => handleClick("/work")}>Work</Link>
               </Text>
-              <Text fontSize="2xl" fontWeight="bold">
+              <Text
+                fontSize="2xl"
+                fontWeight="bold"
+                color={isActive("/projects")}
+              >
                 <Link onClick={() => handleClick("/projects")}>Projects</Link>
               </Text>
             </Stack>

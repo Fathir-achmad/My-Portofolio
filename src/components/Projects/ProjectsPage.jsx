@@ -9,14 +9,9 @@ import {
 } from "@chakra-ui/react";
 import { Frontend } from "./components/FrontEnd";
 import { Backend } from "./components/Backend";
-import { useNavigate } from "react-router-dom";
-import { PiArrowFatLineLeftFill } from "react-icons/pi";
 
 export const ProjectsPage = () => {
-  const navigate = useNavigate();
-  const handleClick = (path) => {
-    navigate(path);
-  };
+
   return (
     <Box p={4} bg="#edf3f8">
      
@@ -27,13 +22,6 @@ export const ProjectsPage = () => {
         gap={5}
         direction={{ base: "column", lg: "row" }}
       >
-        <Flex
-          justifyContent={"flex-end"}
-          cursor={"pointer"}
-          onClick={() => handleClick("/work")}
-        >
-          <PiArrowFatLineLeftFill fontSize={35} />
-        </Flex>
         <Flex p={30} mr={20} >
           <Tabs isLazy>
             <TabList>

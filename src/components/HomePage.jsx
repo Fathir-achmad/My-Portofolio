@@ -1,13 +1,8 @@
 import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
 import { BsGithub, BsInstagram, BsLinkedin } from "react-icons/bs";
-import { PiArrowFatLineRightFill } from "react-icons/pi";
-import { useNavigate } from "react-router-dom";
 
 export const HomePage = () => {
-  const navigate = useNavigate();
-  const handleClick = (path) => {
-    navigate(path);
-  };
+
   const handleClickMedsos = (path) => {
     window.open(path);
   };
@@ -33,7 +28,7 @@ export const HomePage = () => {
             src={`/ava.png`}
             objectFit="cover"
             borderRadius={"20px"}
-            maxW={{ base: "400px", lg: "400px" }} // Sesuaikan nilai lebar maksimum yang Anda inginkan di layar besar
+            maxW={{ base: "400px", lg: "400px" }}
 
           />
         </Flex>
@@ -99,13 +94,6 @@ export const HomePage = () => {
               <BsInstagram fontSize={35} />
             </Flex>
           </Flex>
-        </Flex>
-        <Flex
-          justifyContent={"flex-end"}
-          cursor={"pointer"}
-          onClick={() => handleClick("/about")}
-        >
-          <PiArrowFatLineRightFill fontSize={35} />
         </Flex>
       </Flex>
     </>
