@@ -11,18 +11,15 @@ import { Frontend } from "./components/FrontEnd";
 import { Backend } from "./components/Backend";
 
 export const ProjectsPage = () => {
-
   return (
-    <Box p={4} bg="#edf3f8">
-     
+    <Box p={4} bg="#edf3f8" minH="100vh">
       <Flex
-        minH="100vh"
         justifyContent={"center"}
         alignItems={"center"}
         gap={5}
         direction={{ base: "column", lg: "row" }}
       >
-        <Flex p={30} mr={20} >
+        <Flex p={30} mr={20}>
           <Tabs isLazy>
             <TabList>
               <Tab>Frontend</Tab>

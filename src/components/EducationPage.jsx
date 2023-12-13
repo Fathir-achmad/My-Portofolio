@@ -64,9 +64,13 @@ function Card({ heading, description, icon, href }) {
 
 export const EducationPage = () => {
   return (
-    <Box bg="#edf3f8">
-      <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
-      </Stack>
+    <Box bg="#edf3f8" minH="100vh">
+      <Stack
+        spacing={4}
+        as={Container}
+        maxW={"3xl"}
+        textAlign={"center"}
+      ></Stack>
 
       <Flex
         justifyContent={"center"}
@@ -79,7 +83,6 @@ export const EducationPage = () => {
           justify="center"
           alignItems={"center"}
           p="102px 30px"
-
         >
           <Card
             heading={"Elementary school"}

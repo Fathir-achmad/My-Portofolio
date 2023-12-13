@@ -67,7 +67,7 @@ const Feature = (props) => {
 
 export const SkillsPage = () => {
   return (
-    <Box bg="#edf3f8" p="19px 30px">
+    <Box bg="#edf3f8" minH="100vh" pt={30}>
       <Flex
         _dark={{
           bg: "#3e3e3e",

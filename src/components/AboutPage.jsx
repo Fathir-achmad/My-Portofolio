@@ -5,7 +5,7 @@ export const AboutPage = () => {
   return (
     <>
       <Flex
-        p="110px 30px"
+        minH="100vh"
         justifyContent={"center"}
         alignItems={"center"}
         gap={20}

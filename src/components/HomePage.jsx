@@ -2,7 +2,6 @@ import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
 import { BsGithub, BsInstagram, BsLinkedin } from "react-icons/bs";
 
 export const HomePage = () => {
-
   const handleClickMedsos = (path) => {
     window.open(path);
   };
@@ -10,7 +9,7 @@ export const HomePage = () => {
   return (
     <>
       <Flex
-        p="111px 30px"
+        minH="100vh"
         justifyContent={"center"}
         alignItems={"center"}
         gap={20}
@@ -29,7 +28,6 @@ export const HomePage = () => {
             objectFit="cover"
             borderRadius={"20px"}
             maxW={{ base: "400px", lg: "400px" }}
-
           />
         </Flex>
         <Flex
