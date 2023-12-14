@@ -12,7 +12,7 @@ import { Backend } from "./components/Backend";
 
 export const ProjectsPage = () => {
   return (
-    <Box p={4} bg="#edf3f8" minH="100vh">
+    <Box p={5} bg="#edf3f8" minH="100vh">
       <Flex
         justifyContent={"center"}
         alignItems={"center"}

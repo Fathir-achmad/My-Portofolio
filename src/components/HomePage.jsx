@@ -1,5 +1,7 @@
 import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
 import { BsGithub, BsInstagram, BsLinkedin } from "react-icons/bs";
+import "./styles/styles.css";
+
 
 export const HomePage = () => {
   const handleClickMedsos = (path) => {
@@ -10,6 +12,7 @@ export const HomePage = () => {
     <>
       <Flex
         minH="100vh"
+        p={5}
         justifyContent={"center"}
         alignItems={"center"}
         gap={20}

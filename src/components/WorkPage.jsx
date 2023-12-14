@@ -14,7 +14,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 export const WorkPage = () => {
   return (
-    <Box p={4} bg="#edf3f8" minH="100vh">
+    <Box p={5} bg="#edf3f8" minH="100vh">
       <Flex
         justifyContent={"center"}
         flexDir={{ base: "column", lg: "row" }}
